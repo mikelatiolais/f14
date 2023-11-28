@@ -1,0 +1,130 @@
+#config_version=5
+
+# F-14 Cobrapin Config
+# Primary programmer: Michael Latiolais
+
+# This section defines the type of hardware used to control the game.
+# In this case, since we are using a cobrapin, it is opp, gen2
+hardware:
+  platform: opp
+  driverboards: gen2
+  segment_displays: light_segment_displays
+
+
+opp:
+  #Use the USB ports defined by your OS for the two STM32 boards
+  ports: /dev/ttyACM0, /dev/ttyACM1
+
+psus:
+  default:
+    # Gives the capacitors extra time to recharge after firing a coil
+    # and eases the load on the power supply. Doesn't affect autofire
+    # devices like flippers, pops, slings.
+    release_wait_ms: 50
+
+config:
+  - switches_config.yaml
+
+ball_devices:
+  bd_plunger:
+    ball_switches: s_shooter_lane
+    eject_timeouts: 8s
+    eject_coil: c_shooter
+    mechanical_eject: true
+
+coils:
+    c_shooter:
+      number: 0-0-6
+      default_pulse_ms: 15
+
+
+
+# This section defines the elements of the machine
+machine:
+  balls_installed: 4 # How many balls are physically in your game
+  min_balls: 0 # How few balls can be accounted for before you can start a game
+
+# This section defines some of the basics of the game
+game:
+  balls_per_game: 3
+  max_players: 4
+  
+machine_vars:
+  number_of_balls_locked:
+    initial_value: 0
+    value_type: int
+    persist: false
+    
+    
+
+playfields:
+  playfield:
+    default_source_device: bd_plunger
+    tags: default
+
+modes:
+  - base
+
+# This section holds variables that are used to store values specific to a player
+player_vars:
+  # Total number of all bumper hits
+  total_bumper_hits:
+    initial_value: 0
+    value_type: int
+  # Total number of drop target completions
+  total_drop_complete:
+    initial_value: 0
+    value_type: int
+  # Bumper complete
+  bumper_complete:
+    initial_value: 0
+    value_type: int
+  # Drops complete
+  drops_complete:
+    initial_value: 0
+    value_type: int
+  # Standups 
+  #
+  #
+  
+ 
+  # Playfield bonus and multiplier
+  pf_bonus:
+    initial_value: 0
+    value_type: int
+  pf_multiplier:
+    initial_value: 1
+    value_type: int
+
+
+  # Game Logic Elements
+  super_jets_addon:
+    initial_value: 0
+    value_type: int
+
+
+multiballs:
+  
+keyboard:
+  z:
+    switch: s_left_flipper
+  '?':
+    switch: s_right_flipper
+  s:
+    switch: s_start_button
+  q:
+    switch: s_drop_left
+  w:
+    switch: s_drop_middle
+  e:
+    switch: s_drop_right
+  p:
+    switch: s_middle_popper
+  t:
+    switch: s_center_standup
+  y:
+    switch: s_throne_standup
+  u:
+    switch: s_left_eject_target
+  i:
+    switch: s_right_eject_target

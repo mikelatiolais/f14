@@ -1,0 +1,166 @@
+#config_version=5
+
+# Main switch configuration, based on Cobrapin and Expansion board
+# Author - Michael Latiolais
+switches:
+  # Direct Switches
+  #s_throne_opto:
+  #  number: 0-0-1
+  #  type: 'NC'
+  #  tags: opto, throne
+  # FAKE OUTHOLE
+
+  # Switch Matrix
+  # EfH uses a 8x4 matrix, so there are 32 possible switches.
+  # Since this is a salvaged harness, not all combinations currently exist. Currently, only 22 switches exist on the playfield.
+  # After the switches are all tested physically, the extras will be commented out.
+  # Columns: Yellow-Brown,Yellow-Red,Yellow-Orange,Yellow-Black,Yellow-Green,Yellow-Blue,Yellow-Violet,Yellow-Grey
+  # Rows: Red-Brown, Red-Black, Red-Orange, Red-Yellow
+  # Column 1 - Yellow-Brown
+
+  s_pf_tilt:
+    number: 1-0-40
+
+  s_outhole_switch:
+    number: 1-0-41
+
+  s_right_ball_trough:
+    number: 1-0-42
+
+  s_right_center_trough:
+    number: 1-0-43
+    
+  s_left_center_trough:
+    number: 1-0-44
+
+  s_left_ball_trough:
+    number: 1-0-45
+
+  s_right_flipper_eos:
+    number: 1-0-46
+
+  s_shooter_lane:
+    number: 1-0-47
+
+  s_ramp_entry:
+    number: 1-0-51
+
+  s_right_eject:
+    number: 1-0-52
+
+  s_left_center_eject:
+    number: 1-0-53
+
+  s_right_center_eject:
+    number: 1-0-54
+
+  s_ball_popper:
+    number: 1-0-55
+
+  s_left_center_target:
+    number: 1-0-56
+
+  s_right_center_target:
+    number: 1-0-57
+
+  s_pop_bumper:
+    number: 1-0-59
+
+  s_lower_ramp:
+    number: 1-0-61
+
+  s_middle_ramp:
+    number: 1-0-62
+
+  s_upper_ramp:
+    number: 1-0-63
+
+  s_lower_left_t_target:
+    number: 1-0-64
+
+  s_lower_left_o_target:
+    number: 1-0-65
+
+  s_lower_left_m_target:
+    number: 1-0-66
+
+  s_lower_right_t_target:
+    number: 1-0-67
+
+  s_lower_right_a_target:
+    number: 1-0-68
+
+  s_lower_right_c_target:
+    number: 1-0-69
+
+  s_3_target:
+    number: 1-0-72
+
+  s_2_target:
+    number: 1-0-73
+
+  s_1_target:
+    number: 1-0-74
+
+  s_4_target:
+    number: 1-0-75
+
+  s_5_target:
+    number: 1-0-76
+
+  s_6_target:
+    number: 1-0-77
+
+  s_top_right_loop:
+    number: 1-0-78
+
+  s_spinner:
+    number: 1-0-79
+
+  s_upper_left_t_target:
+    number: 1-0-80
+
+  s_upper_left_o_target:
+    number: 1-0-81
+
+  s_upper_left_m_target:
+    number: 1-0-82
+
+  s_upper_right_t_target:
+    number: 1-0-83
+
+  s_upper_right_a_target:
+    number: 1-0-84
+
+  s_upper_right_c_target:
+    number: 1-0-85
+
+  s_line_of_death:
+    number: 1-0-86
+
+  s_top_left_loop:
+    number: 1-0-87
+
+  s_left_kicker:
+    number: 1-0-88
+
+  s_right_kicker:
+    number: 1-0-89
+
+  s_left_flipper_return:
+    number: 1-0-90
+
+  s_right_flipper_return:
+    number: 1-0-91
+
+  s_left_drain:
+    number: 1-0-92
+
+  s_right_drain:
+    number: 1-0-93
+
+  s_left_flipper_eos:
+    number: 1-0-94
+
+
+
